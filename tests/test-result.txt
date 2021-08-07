@@ -1,0 +1,6 @@
+QuestionOne
+ [x] It returns bool output
+ [x] It returns false on repeated letters
+ [x] It returns true on non repeated letters
+ [x] It returns true on empty string
+
