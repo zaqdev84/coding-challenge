@@ -1,6 +1,6 @@
 <?php
 
-namespace CodingChallenge\QuestionOne;
+namespace CodingChallenge;
 
 class QuestionOne 
 {
