@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use CodingChallenge\QuestionOne\QuestionOne;
+use CodingChallenge\QuestionOne;
 
 class QuestionOneTest extends TestCase
 {
