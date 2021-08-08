@@ -58,7 +58,7 @@ class QuestionOneTest extends TestCase
     public function it_returns_true_on_empty_string()
     {
     	$string = "";
-    	var_dump($this->questionOne->repeatingLettersExists($string));
+    	//var_dump($this->questionOne->repeatingLettersExists($string));
         $this->assertTrue($this->questionOne->repeatingLettersExists($string));
     }
 

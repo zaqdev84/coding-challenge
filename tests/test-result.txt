@@ -4,3 +4,11 @@ QuestionOne
  [x] It returns true on non repeated letters
  [x] It returns true on empty string
 
+QuestionTwo
+ [x] Is valid string returns bool output
+ [x] Is valid string returns false on invalid name of day
+ [x] Is valid string returns false on invalid year
+ [x] Is valid string returns true on valid date finder string
+ [x] It returns date in expected yyyy mm dd format
+ [x] It returns invalid string error when incorrect string
+

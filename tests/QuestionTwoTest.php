@@ -6,60 +6,80 @@ use CodingChallenge\QuestionTwo;
 class QuestionTwoTest extends TestCase
 {
 
-	/*private $questionOne;
-	public function setUp()
-	{
-	    $this->questionOne = new QuestionOne();
-	}
 	/** @test */
-    /*public function it_returns_bool_output()
+    public function is_valid_string_returns_bool_output()
     {
-    	$string = "";
+    	//valid input
+
+        $questionTwo = new QuestionTwo("The last Monday of October 2190");
         
-        $this->assertIsBool($this->questionOne->repeatingLettersExists($string));
+        $this->assertIsBool($questionTwo->isValidString());
 
-        $string = " ";
 
-        $this->assertIsBool($this->questionOne->repeatingLettersExists($string));
+        //Empty string
 
-        $string = "asadas";
+        $questionTwo = new QuestionTwo(" ");
+        
+        $this->assertIsBool($questionTwo->isValidString());
 
-        $this->assertIsBool($this->questionOne->repeatingLettersExists($string));
+        //in valid input
 
-        $string = "asd,asd";
+        $questionTwo = new QuestionTwo("The last of October 2190");
+        
+        $this->assertIsBool($questionTwo->isValidString());
+    }
 
-        $this->assertIsBool($this->questionOne->repeatingLettersExists($string));
+    /** @test */
+    public function is_valid_string_returns_false_on_invalid_name_of_day()
+    {
 
-        $string = "documentry";
+    	$questionTwo = new QuestionTwo("The last of October 2190");
+        
+        $this->assertFalse($questionTwo->isValidString());
 
-        $this->assertIsBool($this->questionOne->repeatingLettersExists($string));
+        $questionTwo = new QuestionTwo("The last Wadnesday of October 2190");
+        
+        $this->assertFalse($questionTwo->isValidString());
 
     }
 
     /** @test */
-    /*public function it_returns_false_on_repeated_letters()
+    public function is_valid_string_returns_false_on_invalid_year()
     {
 
-    	$string = "adad";
-        $this->assertFalse($this->questionOne->repeatingLettersExists($string));
+    	$questionTwo = new QuestionTwo("The last of October 219");
+        
+        $this->assertFalse($questionTwo->isValidString());
+
+        $questionTwo = new QuestionTwo("The last Wadnesday of October 0219");
+        
+        $this->assertFalse($questionTwo->isValidString());
 
     }
 
     /** @test */
-    /*public function it_returns_true_on_non_repeated_letters()
+    public function is_valid_string_returns_true_on_valid_date_finder_string()
     {
 
-    	$string = "Cloud";
-        $this->assertTrue($this->questionOne->repeatingLettersExists($string));
+        $questionTwo = new QuestionTwo("The last Wednesday of October 2019");
+        
+        $this->assertTrue($questionTwo->isValidString());
 
     }
 
     /** @test */
-    /*public function it_returns_true_on_empty_string()
+    public function it_returns_date_in_expected_yyyy_mm_dd_format()
     {
-    	$string = "";
-    	var_dump($this->questionOne->repeatingLettersExists($string));
-        $this->assertTrue($this->questionOne->repeatingLettersExists($string));
-    }*/
+    	$questionTwo = new QuestionTwo("The last Wednesday of October 2019");
+        $date = \DateTime::CreateFromFormat("Y-m-d",$questionTwo->stringToDateConverter());
+        $this->assertTrue($date instanceof DateTime);
+    }
+
+    /** @test */
+    public function it_returns_invalid_string_error_when_incorrect_string()
+    {
+        $questionTwo = new QuestionTwo("The last Wednesday of October 019");
+        $this->assertEquals("Invalid String", $questionTwo->stringToDateConverter());
+    }
 
 }
