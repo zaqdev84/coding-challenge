@@ -5,10 +5,16 @@ namespace CodingChallenge;
 class QuestionThree 
 {
 	
-	/*static function repeatingLettersExists(string $string): bool 
+	static function mergeStrings(string $string1, string $string2): string 
 	{
-		preg_match_all('/([a-z])(?:.*)(\1)+/i', $string, $matches);
-		$result = array_combine($matches[0], array_map('strlen', $matches[0]));
-		return (count($result) > 0) ? false : true;
-	}*/
+		$mergedString = '';
+	    
+	    $minLength = min(strlen($string1), strlen($string2));
+
+	    for($i=0; $i<$minLength; $i++)
+	    {
+	        $mergedString = $mergedString . $string1[$i] . $string2[$i];
+	    }
+	   return $mergedString = $mergedString . substr($string1, $minLength) . substr($string2, $minLength);
+	}
 }

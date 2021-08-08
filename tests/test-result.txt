@@ -4,6 +4,10 @@ QuestionOne
  [x] It returns true on non repeated letters
  [x] It returns true on empty string
 
+QuestionThree
+ [x] It returns string output
+ [x] It returns expected string for MICHAEL JORDAN as MJIOCRHDAAENL
+
 QuestionTwo
  [x] Is valid string returns bool output
  [x] Is valid string returns false on invalid name of day
