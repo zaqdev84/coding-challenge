@@ -28,4 +28,7 @@ Test Report is available at:
 ./tests/test-result.txt
 ```
 
-[include](file:./tests/test-result.txt)
+Excecute index.php as follows:
+```
+php index.php
+```
