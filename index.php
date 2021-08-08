@@ -23,8 +23,22 @@ $duplicatesExist = (!QuestionOne::repeatingLettersExists($string)) ? "YES" : "NO
 echo "Duplicate Letters Exist in $string? " . $duplicatesExist . "\n";
 
 
-$questionTwo = new QuestionTwo("The last Monday of October 2190");
+$questionTwo = new QuestionTwo("The last Monday of October 2019");
 
-var_dump($questionTwo->isValidString());
+//var_dump($questionTwo->isValidString());
 
-echo $questionTwo->stringToDateConverter();
+echo $questionTwo->stringToDateConverter() . "\n";
+
+echo QuestionThree::mergeStrings("MICHAEL", "JORDAN") . "\n";
+
+echo QuestionThree::mergeStrings("JORDAN", "MICHAEL") . "\n";
+
+echo QuestionFour::getSingleDigitNumber(1234) . "\n";
+
+echo QuestionFour::getSingleDigitNumber(145879898989899) . "\n";
+
+echo QuestionFour::getSingleDigitNumber(999999999999999) . "\n";
+
+$questionFive = new QuestionFive();
+
+var_dump($questionFive->createArrayFromXML());

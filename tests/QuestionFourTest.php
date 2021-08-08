@@ -6,60 +6,30 @@ use CodingChallenge\QuestionFour;
 class QuestionFourTest extends TestCase
 {
 
-    /*private $questionOne;
-    public function setUp()
-    {
-        $this->questionOne = new QuestionOne();
-    }
     /** @test */
-    /*public function it_returns_bool_output()
+    public function it_returns_same_number_if_not_postive_or_0()
     {
-        $string = "";
-        
-        $this->assertIsBool($this->questionOne->repeatingLettersExists($string));
+        $this->assertEquals(0, QuestionFour::getSingleDigitNumber(0));
 
-        $string = " ";
-
-        $this->assertIsBool($this->questionOne->repeatingLettersExists($string));
-
-        $string = "asadas";
-
-        $this->assertIsBool($this->questionOne->repeatingLettersExists($string));
-
-        $string = "asd,asd";
-
-        $this->assertIsBool($this->questionOne->repeatingLettersExists($string));
-
-        $string = "documentry";
-
-        $this->assertIsBool($this->questionOne->repeatingLettersExists($string));
-
+        $this->assertEquals(-2, QuestionFour::getSingleDigitNumber(-2));
     }
 
     /** @test */
-    /*public function it_returns_false_on_repeated_letters()
+    public function it_returns_4_for_4()
     {
-
-        $string = "adad";
-        $this->assertFalse($this->questionOne->repeatingLettersExists($string));
-
+        $this->assertEquals(4, QuestionFour::getSingleDigitNumber(4));
     }
 
     /** @test */
-    /*public function it_returns_true_on_non_repeated_letters()
+    public function it_returns_9_for_18()
     {
-
-        $string = "Cloud";
-        $this->assertTrue($this->questionOne->repeatingLettersExists($string));
-
+        $this->assertEquals(9, QuestionFour::getSingleDigitNumber(18));
     }
 
     /** @test */
-    /*public function it_returns_true_on_empty_string()
+    public function it_returns_6_for_258()
     {
-        $string = "";
-        var_dump($this->questionOne->repeatingLettersExists($string));
-        $this->assertTrue($this->questionOne->repeatingLettersExists($string));
-    }*/
+        $this->assertEquals(6, QuestionFour::getSingleDigitNumber(258));
+    }
 
 }

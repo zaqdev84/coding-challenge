@@ -4,6 +4,21 @@ namespace CodingChallenge;
 
 class QuestionFive 
 {
+
+	private $filePath = "./sample-reaxml.xml";
+
+	public function __construct() 
+	{
+
+	}
+
+	public function createArrayFromXML()
+	{
+		$document = new \DOMDocument();
+		$document->loadXml($this->filePath);
+		$xpath = new \DOMXpath($document);
+		var_dump($xpath);
+	}
 	
 	/*static function repeatingLettersExists(string $string): bool 
 	{

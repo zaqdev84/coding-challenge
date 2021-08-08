@@ -1,3 +1,9 @@
+QuestionFour
+ [x] It returns same number if not postive or 0
+ [x] It returns 4 for 4
+ [x] It returns 9 for 18
+ [x] It returns 6 for 258
+
 QuestionOne
  [x] It returns bool output
  [x] It returns false on repeated letters
