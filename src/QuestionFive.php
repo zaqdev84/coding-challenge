@@ -14,16 +14,38 @@ class QuestionFive
 
 	public function createArrayFromXML()
 	{
+		
+		$propertiesListByType = [];
+
 		$document = new \DOMDocument();
-		$document->loadXml($this->filePath);
-		$xpath = new \DOMXpath($document);
-		var_dump($xpath);
+
+		if ( $document->load($this->filePath) ) {
+		    $propertyList = $document->getElementsByTagName('propertyList'); // Find Sections
+		    $k=0;
+			foreach ($propertyList as $property) //go to each section 1 by 1
+			{
+				foreach($property->childNodes as $item) { 
+				    if ($item->hasChildNodes()) {
+				        $childs = $item->childNodes;
+				        $uniqueId = $this->extractUniqueID($childs);
+				        $propertiesListByType[$uniqueId] = 	$item->nodeName;			        
+				    }
+				}
+			}
+		}
+		else {
+		    echo "Could not load file";
+		}		
+
+		return $propertiesListByType;
 	}
-	
-	/*static function repeatingLettersExists(string $string): bool 
+
+	private function extractUniqueID($childNodes)
 	{
-		preg_match_all('/([a-z])(?:.*)(\1)+/i', $string, $matches);
-		$result = array_combine($matches[0], array_map('strlen', $matches[0]));
-		return (count($result) > 0) ? false : true;
-	}*/
+		foreach($childNodes as $i) {
+			if($i->nodeName == 'uniqueID')
+            	return $i->nodeValue;
+        }
+
+	}
 }
