@@ -25,4 +25,14 @@ class QuestionThreeTest extends TestCase
 
     }
 
+    /** @test */
+    public function it_returns_expected_string_for_JORDAN_MICHAEL_as_JMOIRCDHAANEL()
+    {
+
+        $string1 = "JORDAN";
+        $string2 = "MICHAEL";
+        $this->assertEquals('JMOIRCDHAANEL', QuestionThree::mergeStrings($string1, $string2));
+
+    }
+
 }

@@ -7,6 +7,7 @@ QuestionOne
 QuestionThree
  [x] It returns string output
  [x] It returns expected string for MICHAEL JORDAN as MJIOCRHDAAENL
+ [x] It returns expected string for JORDAN MICHAEL as JMOIRCDHAANEL
 
 QuestionTwo
  [x] Is valid string returns bool output
